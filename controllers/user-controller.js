@@ -45,8 +45,7 @@ exports.register = async (req, res) => {
     // token creation
     const token = generateUserToken(user)
 
-    await doSendConfirmationEmail(email, token, req.protocol)
-
+    
     res.status(200).send({
       message: "success",
       user,
@@ -59,7 +58,6 @@ exports.login = async (req, res) => {
   const { email, password } = req.body
 
   const user = await User.findOne({ email })
-
   if (user && bcrypt.compare(password, user.password)) {
     
     const token = generateUserToken(user)
@@ -206,6 +204,7 @@ exports.updatePassword = async (req, res) => {
     newPasswordEncrypted = await bcrypt.hash(newPassword, 10)
 
     let user = await User.findOneAndUpdate(
+  
       { email: email },
       {
         $set: {
