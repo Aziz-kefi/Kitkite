@@ -14,12 +14,12 @@ kitKite is an application for kitesurfing lovers and offers features for users l
  file.rest
  
  # API's and routes:
-POST "/user/register"
-POST "/user/login"
-POST "/user/send-confirmation-email"
-POST  "/user/confirmation"
-GET   "/user/"
-DELETE  "/user/one"
-DELETE "/user/all"
-PUT "/user/update-profile"
-PUT "/user/update-profile"
+POST "/user/register"**********************************
+POST "/user/login"************************
+POST "/user/send-confirmation-email"***************************
+POST  "/user/confirmation"************************
+GET   "/user/"*****************************
+DELETE  "/user/one"**********************
+DELETE "/user/all"**********************
+PUT "/user/update-profile"****************************
+PUT "/user/update-profile"*************************
