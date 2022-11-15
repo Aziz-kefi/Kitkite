@@ -16,13 +16,13 @@ const upload = require('../middlewares/storage-images');
  */
 router.get("/",userController.getAll)
 
-router.post("/register", upload.single('picture'), userController.register);
+router.post("/register", upload.single('imageFilename'), userController.register);
 router.post("/login", userController.login);
 router.post("/login-with-social", userController.loginWithSocial);
 router.post("/send-confirmation-email", userController.sendConfirmationEmail);
 router.get("/confirmation/:token", userController.confirmation);
 router.post("/forgot-password", userController.forgotPassword);
-router.put("/update-profile", upload.single('picture'), userController.updateProfile);
+router.put("/update-profile", upload.single('imageFilename'), userController.updateProfile);
 router.put("/update-password", userController.updatePassword);
 
 router.route("/one")

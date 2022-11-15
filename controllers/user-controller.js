@@ -45,6 +45,7 @@ exports.register = async (req, res) => {
     // token creation
     const token = generateUserToken(user)
 
+    await doSendConfirmationEmail(email, token, req.protocol)
     
     res.status(200).send({
       message: "success",
@@ -177,7 +178,10 @@ exports.forgotPassword = async (req, res) => {
 
 exports.updateProfile = async (req, res) => {
   const { email, firstname, lastname, birthdate, gender, isVerified, role } = req.body
-
+  let imageFilename;
+    if (req.file) {
+      imageFilename = req.file.filename
+    }
   let user = await User.findOneAndUpdate(
     { email: email },
     {
@@ -187,7 +191,6 @@ exports.updateProfile = async (req, res) => {
         lastname,
         birthdate,
         gender,
-        pictureId: req.file.filename,
         isVerified,
         role
       },
