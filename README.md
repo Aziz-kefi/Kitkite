@@ -9,9 +9,12 @@ kitKite is an application for kitesurfing lovers and offers features for users l
  DataBase and DataBase Managment:
  MongoDB.
  Mongoose.
- Implemented tools : 
+ Implemented tools & dependencies: 
  SwaggerUI
- file.rest
+ JWT 
+ Multer
+ Bcrypt..
+ 
  
  # API's and routes:
 POST "/user/register"**********************************
@@ -23,3 +26,8 @@ DELETE  "/user/one"**********************
 DELETE "/user/all"**********************
 PUT "/user/update-profile"****************************
 PUT "/user/update-profile"*************************
+
+
+# Run:
+npm install 
+node index.js 
