@@ -11,7 +11,8 @@ kitKite is an application for kitesurfing lovers and offers features for users l
  Mongoose.
  Implemented tools & dependencies: 
  SwaggerUI
- JWT 
+ JWT
+ Dotenv
  Multer
  Bcrypt..
  
