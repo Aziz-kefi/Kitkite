@@ -6,13 +6,46 @@ const upload = require('../middlewares/storage-images');
 
 /**
  * @swagger
- * /:
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *           description: user id
+ *         username:
+ *           type: string
+ *           description:  username
+ *         password:
+ *           type: string
+ *           description: password
+ *         email:
+ *           type: string
+ *           description: email
+ *         bio:
+ *           type: string
+ *         gender:
+ *           type: string
+ *         imageFilename:
+ *           type: string
+ *         firstname:
+ *           type: string
+ *         lastname:
+ *           type: string 
+ */
+
+/**
+ * @swagger
+ * /user/:
  *   get: 
- *      summary: function get all 
- *      description: ok
- *      responses:
- *              200:
- *              description: to test methods
+ *     summary: function get all 
+ *     description: ok
+ *     responses:
+ *       200:
+ *         description: to test methods
+ *         content:
+ *           json
  */
 router.get("/",userController.getAll)
 

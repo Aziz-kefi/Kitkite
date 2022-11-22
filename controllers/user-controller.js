@@ -17,7 +17,7 @@ exports.getAll = async (req, res) => {
 }
 
 exports.register = async (req, res) => {
-  const { username, email, password, firstname, lastname, birthdate, gender, bio } = req.body
+  const { username, email, password, firstname, lastname, birthdate } = req.body
 
   let imageFilename;
   if (req.file) {
@@ -34,8 +34,7 @@ exports.register = async (req, res) => {
       firstname,
       lastname,
       birthdate,
-      gender,
-      bio,
+      bio:"User Bio ready to be changed",
       imageFilename,
       isVerified: false,
       role: "ROLE_USER",
@@ -251,11 +250,11 @@ async function doSendConfirmationEmail(email, token, protocol) {
   sendEmail({
     from: process.env.GMAIL_USER,
     to: email,
-    subject: "Confirm your email",
+    subject: "Confirm your Kitkite User Account",
     html:
-      "<h3>Please confirm your email using this </h3><a href='" +
+      "<h3>Please confirm your Kitkite Account  using this </h3><a href='" +
       protocol + "://" + os.hostname() + ":" + port + "/user/confirmation/" + token +
-      "'>Link</a>",
+      "'>Link Here</a><img src="+"./uploads/images/Logo.png"+">"
   })
 }
 

@@ -8,13 +8,6 @@ const UserSchema = new mongoose.Schema(
     firstname: { type: String },
     lastname: { type: String },
     birthdate: { type: Date, },
-    gender: {
-      type: String,
-      enum: {
-        values: ['Male', 'Female'],
-        message: '{VALUE} is not supported'
-      }
-    },
     bio: { type: String },
     imageFilename: { type: String },
     role: {

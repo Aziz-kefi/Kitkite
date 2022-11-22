@@ -48,12 +48,12 @@ const options = {
 
     servers: [
       {
-        url: "http://localhost:5000/user",
+        url: "http://localhost:5000",
         description: "My API Documentation",
       },
     ],
   },
-  apis: ["./routes/user-route.js"],
+  apis: ["./routes/*.js"],
 };
 
 const specs = swaggerJsDoc(options);
@@ -67,3 +67,6 @@ const server = app.listen(port, () => {
   const port = server.address().port;
   console.log(`Server running on port ${port}`);
 });
+
+
+
