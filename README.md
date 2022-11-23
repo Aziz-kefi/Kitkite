@@ -42,6 +42,7 @@ User Routes:
 * Update Profile (PUT): localhost:5000/user/update-profile
 * Delete All Users (DELETE): localhost:5000/user/all
 * Delete One User (DELETE): localhost:5000/user/one
+* SWAGGER : localhost:5000/api-docs
 
 
 
