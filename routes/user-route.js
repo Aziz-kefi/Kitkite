@@ -48,7 +48,7 @@ const upload = require('../middlewares/storage-images');
  *           json
  */
 router.get("/",userController.getAll)
-
+router.get("/getone",userController.get)
 router.post("/register", upload.single('imageFilename'), userController.register);
 router.post("/login", userController.login);
 router.post("/login-with-social", userController.loginWithSocial);
@@ -59,7 +59,7 @@ router.put("/update-profile", upload.single('imageFilename'), userController.upd
 router.put("/update-password", userController.updatePassword);
 
 router.route("/one")
-    .post(userController.get)
+    .get(userController.get)
     .delete(userController.delete);
 
 router.route("/all").get(userController.getAll).delete(userController.deleteAll);

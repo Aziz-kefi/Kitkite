@@ -61,11 +61,12 @@ exports.login = async (req, res) => {
   if (user && bcrypt.compare(password, user.password)) {
     
     const token = generateUserToken(user)
-
+    
     if (!user.isVerified) {
       res.status(403).send({ user, message: "email non verifié" })
     } else {
       res.status(200).send({ token, user, message: "success" })
+      
     }
   } else {
     res.status(403).send({ message: "mot de passe ou email incorrect" })
@@ -176,7 +177,7 @@ exports.forgotPassword = async (req, res) => {
 }
 
 exports.updateProfile = async (req, res) => {
-  const { email, firstname, lastname, birthdate, gender, isVerified, role } = req.body
+  const { email, firstname, lastname, birthdate,bio,  isVerified, role } = req.body
   let imageFilename;
     if (req.file) {
       imageFilename = req.file.filename
@@ -189,7 +190,8 @@ exports.updateProfile = async (req, res) => {
         firstname,
         lastname,
         birthdate,
-        gender,
+        bio,
+        imageFilename,
         isVerified,
         role
       },
